@@ -28,3 +28,23 @@
 
     #运行单元测试
     npm run unit
+
+## 项目功能的介绍
+   #目前项目的数据使用的是模拟数据
+
+   #vue-router 的使用
+   使用导航守卫  当未登入的时候进行拦截直接跳到登录页
+
+   #axios的使用
+   使用axios 对返回数据进行统一管理   返回数据code的统一处理
+
+   #vue directive
+   clickoutside.js  弹出层外层点击隐藏
+   infiniteScroll.js  无效滚动加载
+
+   #vue components
+   提示信息 alert.vue;
+   加载中  loading.vue
+
+
+
