@@ -60,7 +60,10 @@ module.exports = {
                 }
             ],
             page:{
-                page_current:1
+                page_current:1,
+                page_size: 10, 
+                page_total: 3, 
+                total: "26"
             }
         });
     }

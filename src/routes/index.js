@@ -22,6 +22,7 @@ const Me = r => require(['views/me'], r);
 //404
 const notFound = r => require(['views/404'], r);
 const Test = r => require(['views/test'], r);
+const Page = r => require(['views/page'], r);
 // 根目录
 const rootPath = '';
 
@@ -30,6 +31,7 @@ const routes = [
   //登录 注册 忘记密码
   {path: '', redirect: {name: 'login'}},
   {path: '/test',  component: Test, name: 'test'},
+  {path: '/page',  component: Page, name: 'page'},
   {path: '/login', component: Login, name: 'login'},
   {path: '/register', component: Register, name: 'register'},
   {path: '/forgetPwd', component: ForgetPwd, name: 'forgetPwd'},
