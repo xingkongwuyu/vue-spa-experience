@@ -135,9 +135,9 @@
             pageSize(val) {
                 this.limit = val || 10
             },
-            // total(val) {
-            //     this.size = val || 1
-            // }
+            total(val) {
+                 this.size = val || 1
+            }
         }
     }
 </script>
