@@ -10,6 +10,7 @@ import Axios from './utils/diyaxios';
 import './css/normalize.css';
 import 'lib-flexible/flexible.js'
 import FastClick from 'fastclick'
+import vueNotice from './components/notice'
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
         FastClick.attach(document.body);
@@ -18,6 +19,7 @@ if ('addEventListener' in document) {
 
 Vue.use(Vuex)
 Vue.use(VueRouter)
+Vue.use(vueNotice)
 
 if(process.env.NODE_ENV=="production"){
 
