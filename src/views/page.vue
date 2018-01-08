@@ -56,11 +56,13 @@
                 vm.$http.get('/api/list/' + vm.currentPage)
                     .then(function (res) {
                         console.log(res)
-                        vm.items = res.data.data;
-                        console.log(res.data.page.total)
-                        vm.count = Number(res.data.page.total);
-                        vm.currentPage = Number(res.data.page.page_current);
-                        vm.pageSize = res.data.page.pageSize;
+                        if(res.data.success){
+                            vm.items = res.data.data;
+                            vm.count = Number(res.data.page.total);
+                            vm.currentPage = Number(res.data.page.page_current);
+                            vm.pageSize = res.data.page.pageSize;
+                        }
+                      
                 })
             },
 
@@ -82,7 +84,12 @@
                 //模拟
                 vm.$http.get('/api/list_del')
                     .then(function (res) {
-                        alert('res.message')
+                         if(res.data.success){
+                            alert(res.data.message)
+                         }else{
+                            alert(res.data.message)
+                         }
+                      
                 })
             }
         },
