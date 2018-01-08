@@ -7,92 +7,102 @@
 module.exports = {
     api: '/api/list/:name',
     response: function (req, res) {
-        if(req.params.name==1){
-            res.send(
-                {
-                    success: true,
-                    message: "获取成功",
-                    code: "",
-                    data: [
-                        { 
-                            name:'MarialLily',
-                            sex:'girl',
-                        },
-                        { 
-                          name:'Marial',
-                          sex:'boy',
-                       },
-                       { 
-                          name:'Marial',
-                          sex:'girl',
-                       },
-                       { 
-                          name:'ddd',
-                          sex:'girl',
-                       },
-                       { 
-                          name:'ccc',
-                          sex:'girl',
-                       },
-                       { 
-                          name:'bbb',
-                          sex:'girl',
-                       },
-                       { 
-                          name:'aaa',
-                          sex:'girl',
-                       },
-                    ],
-                    page:{
-                        page_current:1,
-                        page_size: 10, 
-                        page_total: 3, 
-                        total: "26"
-                    }
-                });
-       }else{
-            res.send(
-              {
-                  success: true,
-                  message: "获取成功",
-                  code: "",
-                  data: [
-                      { 
-                          name:'Lily',
-                          sex:'girl',
-                      },
-                      { 
-                        name:'Kangkang',
-                        sex:'boy',
-                     },
-                     { 
-                        name:'Marial',
-                        sex:'girl',
-                     },
-                     { 
-                        name:'ddd',
-                        sex:'girl',
-                     },
-                     { 
-                        name:'ccc',
-                        sex:'girl',
-                     },
-                     { 
-                        name:'bbb',
-                        sex:'girl',
-                     },
-                     { 
-                        name:'aaa',
-                        sex:'girl',
-                     },
-                  ],
-                  page:{
-                      page_current:req.params.name,
-                      page_size: 10, 
-                      page_total: 3, 
-                      total: "26"
-                  }
-              })
-          }
+        if (req.params.name == 1) {
+            res.send({
+                success: true,
+                message: "获取成功",
+                code: "",
+                data: [{
+                        id: 1,
+                        name: 'MarialLily',
+                        sex: 'girl',
+                    },
+                    {
+                        id: 2,
+                        name: 'Marial',
+                        sex: 'boy',
+                    },
+                    {
+                        id: 4,
+                        name: 'Marial',
+                        sex: 'girl',
+                    },
+                    {
+                        id: 5,
+                        name: 'ddd',
+                        sex: 'girl',
+                    },
+                    {
+                        id: 6,
+                        name: 'ccc',
+                        sex: 'girl',
+                    },
+                    {
+                        id: 7,
+                        name: 'bbb',
+                        sex: 'girl',
+                    },
+                    {
+                        id: 8,
+                        name: 'aaa',
+                        sex: 'girl',
+                    },
+                ],
+                page: {
+                    page_current: 1,
+                    page_size: 10,
+                    page_total: 3,
+                    total: "26"
+                }
+            });
+        } else {
+            res.send({
+                success: true,
+                message: "获取成功",
+                code: "",
+                data: [{
+                        id: 1,
+                        name: 'Lily',
+                        sex: 'girl',
+                    },
+                    {
+                        id: 2,
+                        name: 'Kangkang',
+                        sex: 'boy',
+                    },
+                    {
+                        id: 3,
+                        name: 'Marial',
+                        sex: 'girl',
+                    },
+                    {
+                        id: 4,
+                        name: 'ddd',
+                        sex: 'girl',
+                    },
+                    {
+                        id: 5,
+                        name: 'ccc',
+                        sex: 'girl',
+                    },
+                    {
+                        id: 6,
+                        name: 'bbb',
+                        sex: 'girl',
+                    },
+                    {
+                        id: 7,
+                        name: 'aaa',
+                        sex: 'girl',
+                    },
+                ],
+                page: {
+                    page_current: req.params.name,
+                    page_size: 10,
+                    page_total: 3,
+                    total: "26"
+                }
+            })
+        }
     }
-  }
+}

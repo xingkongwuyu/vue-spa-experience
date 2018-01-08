@@ -12,7 +12,7 @@
                     <td>{{index+1}}</td>
                     <td>{{item.name}}</td>
                     <td>{{item.sex}}</td>
-                    <td><a href="javascript:;" @click="modelShow(item)">编辑</a><a href="javascript:;">删除</a></td>
+                    <td><a href="javascript:;" @click="modelShow(item)">编辑</a><a href="javascript:;" @click="delOneList(id)">删除</a></td>
                 </tr>
             </tbody>
         </table>
@@ -27,7 +27,6 @@
                 </div>
                 <div>性别<input type="text" v-model="editModel.sex"></div>
              </div>
-            
         </div>
     </div>
 </template>
@@ -62,7 +61,7 @@
                         vm.count = Number(res.data.page.total);
                         vm.currentPage = Number(res.data.page.page_current);
                         vm.pageSize = res.data.page.pageSize;
-                    })
+                })
             },
 
             //从page组件传递过来的当前page
@@ -75,8 +74,16 @@
                 vm.showModel=true;
                 vm.editModel=Object.assign({}, item);
             },
-            hideDialog:function(){
+            hideDialog(){
                 this.showModel=false;
+            },
+            delOneList(id){
+                var vm = this;
+                //模拟
+                vm.$http.get('/api/list_del')
+                    .then(function (res) {
+                        alert('res.message')
+                })
             }
         },
         mounted(){

@@ -8,7 +8,6 @@ const LoadingConstructor = Vue.extend(msgboxVue);
 LoadingConstructor.prototype.close = function() {
   this.$on('after-leave', _ => {
     const target =document.body
-
     if (this.$el && this.$el.parentNode) {
       this.$el.parentNode.removeChild(this.$el);
     }
