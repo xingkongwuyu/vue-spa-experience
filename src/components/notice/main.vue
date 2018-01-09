@@ -1,7 +1,7 @@
 <template>
 <div>
   <transition name="el-loading-fade" @after-leave="handleAfterLeave">
-      <div v-if="show">hello{{aaa}}</div>
+      <div v-if="show">hello<input v-model="aaa"></div>
   </transition>
   </div>
 </template>
@@ -35,10 +35,10 @@ export default {
        transform: scale(0);
   }
   .el-loading-fade-enter-active{
-       animation: bounce-in 5s;
+       animation: bounce-in 1s;
   }
    .el-loading-fade-leave-active{
-       animation: bounce-in 5s reverse;
+       animation: bounce-in 1s reverse;
   }
 @keyframes bounce-in {
   0% {

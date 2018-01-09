@@ -11,6 +11,8 @@ import './css/normalize.css';
 import 'lib-flexible/flexible.js'
 import FastClick from 'fastclick'
 import vueNotice from './components/notice'
+import vueLoading from './components/loading/index.js';
+import VueConfirm from './components/confirm/index.js'
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
         FastClick.attach(document.body);
@@ -20,7 +22,8 @@ if ('addEventListener' in document) {
 Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(vueNotice)
-
+Vue.use(VueConfirm)
+Vue.use(vueLoading)
 if(process.env.NODE_ENV=="production"){
 
 }else{
