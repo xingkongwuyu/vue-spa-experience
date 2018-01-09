@@ -1,24 +1,22 @@
 <template>
-    <div v-show="show" style="display: block;" id="bombConfirm" class="modal fade in ng-scope" tabindex="-1" role="dialog" aria-labelledby="bombConfirmLabel"
-        aria-hidden="false">
-        <div class="modal-backdrop fade in"></div>
-        <div class="modal-dialog modal-sm modal-confirm" style="margin-top: -230px;">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="btn-close" data-dismiss="modal">
-                        <i class="icon-close" id="bombCloseBtn" @click="show=false">2222</i>
+    <div v-show="show" class="mei-modal" tabindex="-1" role="dialog" aria-labelledby="bombConfirmLabel" aria-hidden="false">
+        <div class="mei-modal-mask"></div>
+        <div class="mei-modal-wrap">
+            <div class="mei-modal-content">
+                <div class="mei-modal-header">
+                    <div class="mei-btn-close">
+                        <i class="mei-icon-close" @click="button[1].ontap">2222</i>
                     </div>
-                    <h4 class="modal-title">{{title}}</h4>
+                    <h4 class="mei-modal-title">{{title}}</h4>
                 </div>
-                <div class="modal-body text-center">
-                    <div class="status-icon-box">
-                       
+                <div class="mei-modal-body">
+                    <div class="mei-status-icon-box">
                     </div>
-                    <div class="status-text">{{text}}</div>
+                    <div class="mei-status-text">{{text}}</div>
                 </div>
-                <div class="modal-footer full-btn-box">
-                    <button type="button" class="btn btn-blue full-btn" id="confirmButtons1" @click="button[0].ontap">{{button[0].text}}</button>
-                    <button type="button" class="btn btn-blue full-btn" id="confirmButtons1" @click="button[1].ontap">{{button[1].text}}</button>
+                <div class="mei-modal-footer">
+                    <button type="button" class="mei-btn mei-btn-primary" id="confirmButtons1" @click="button[0].ontap">{{button[0].text}}</button>
+                    <button type="button" class="mei-btn mei-btn-text" id="confirmButtons1" @click="button[1].ontap">{{button[1].text}}</button>
                 </div>
             </div>
         </div>
@@ -27,58 +25,29 @@
 
 <script>
     export default {
-        data(){
+        data() {
             return {
-                show:true,
-                title:'1212',
-                text:'12121111112',
-                button:[{
-                text: '确定',
-                ontap: function () {
-                    
-                }
-            }]
+                show: true,
+                title: '1212',
+                text: '12121111112',
+                button: []
             }
         }
     }
 </script>
 
-<style>
-.modal {
-    display: none;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1040;
-    -webkit-overflow-scrolling: touch;
-    outline: 0;
-}
-.modal-backdrop.in {
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-}
-.modal-backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #000000;
-}
-.modal-sm {
-    width: 708px;
-    margin-left: -354px;
-}
-.modal-dialog {
-    width: auto;
-    margin: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 0px;
-    z-index: 9999;
-}
+<style lang="scss" rel="stylesheet">
+    .mei-modal {
+        .mei-model-mask {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(55, 55, 55, .6);
+            height: 100%;
+            z-index: 1000;
+        }
+        
+    }
 </style>
