@@ -1,10 +1,10 @@
 <template>
   <transition name="mei-message-fade">
-    <div v-show="show" :class="[
+    <div v-if="show" :class="[
         'mei-message',
         type? `mei-message-${ type }` : '']"
       >
-      <i :class="iconClass" v-if="iconClass"></i>
+      <i :class="iconClass"></i>
       <span>{{text}}</span>
     </div>
   </transition>
@@ -21,7 +21,7 @@
   export default {
     data() {
       return {
-        show:false,
+        show:true,
         text:'',
         type:''
       };
@@ -59,25 +59,14 @@
     .mei-message-error{
         background-color:orange; 
     }
-   .mei-message-fade-enter,.mei-message-fade-leave-to{
-      opacity:0.5;
-   }
-  .mei-message-fade-enter-active{
-       animation: bounce-in 1s;
-  }
-   .mei-message-fade-leave-active{
-      animation: bounce-in 1s reverse;
-  }
-@keyframes bounce-in {
-  0% {
-       opacity: 0;
-  }
-   50% {
-      opacity:0.5; 
-  }
-  100% {
-      opacity:1
-  }
+.mei-message-fade-enter-active {
+  transition: all 2s ease;
 }
-</style>
+.mei-message-fade-leave-active {
+  transition: all 2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.mei-message-fade-enter, .mei-message-fade-leave-to
+/* .slide-fade-leave-active for below version 2.1.8 */ {
+  top:0px;
+}
 </style>

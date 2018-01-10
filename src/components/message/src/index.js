@@ -35,11 +35,12 @@ const messageBox = (options = {}) => {
     parent.appendChild(instance.$el);
     Vue.nextTick(() => {
       instance.show = true;
+      setTimeout(function(){
+        instance.close();
+      },options.duration)
     });
     messageVueInstances=instance
-    setTimeout(function(){
-      instance.close();
-    },options.duration)
+
    
     return instance;
   };
