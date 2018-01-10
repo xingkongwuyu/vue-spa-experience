@@ -1,7 +1,7 @@
 <template>
 <div>
-  <div @click="handleFormatError">11111</div>
-  <div @click="handleFormatError2">11111</div>
+    <div @click="handleFormatError">11111</div>
+    <div @click="handleFormatError2">11111</div>
     <div @click="handleFormatError3">11111</div>
     <div @click="handleFormatError4">312121</div>
   </div>
@@ -33,12 +33,13 @@
         });
      },
        handleFormatError4 () {
-          var content = ` <div class="title">${this.aaa}</div>`
-         var vm=this
-        const loading = this.$confirm({
+          var content = ` <div class="title">11111</div>`
+          var vm=this
+         const loading = this.$confirm({
           show:false,
           title:'23232',
           text:content,
+          dangerouslyUseHTMLString:true,
           button:[{
                 text: '确定',
                 ontap: function () {

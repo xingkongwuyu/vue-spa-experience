@@ -7,6 +7,7 @@ import VueRouter from 'vue-router';
 import App from './app';
 import routes from './routes';
 import Axios from './utils/diyaxios';
+import './css/component.css'
 import './css/normalize.css';
 import 'lib-flexible/flexible.js'
 import FastClick from 'fastclick'

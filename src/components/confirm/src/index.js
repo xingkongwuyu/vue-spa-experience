@@ -12,7 +12,7 @@ const confirmVueConstructor = Vue.extend(confirmVue);
 confirmVueConstructor.prototype.close = function() {
     var vm=this;
     confirmVueLoading=null;
-    var getUserInfo=new Promise(function(resolve,reject){
+    var promise=new Promise(function(resolve,reject){
             if (vm.$el && vm.$el.parentNode) {
                 vm.$el.parentNode.removeChild(vm.$el);
             }
@@ -21,11 +21,11 @@ confirmVueConstructor.prototype.close = function() {
             vm.show = false;
     })
 
-    return getUserInfo
+    return promise
 };
 const confirmBox = (options = {}) => {
     if (Vue.prototype.$isServer) return;
-    console.log(options)
+    console.log(options);
     options = Object.assign({}, defaults, options);
     console.log(options)
     let parent = document.body ;

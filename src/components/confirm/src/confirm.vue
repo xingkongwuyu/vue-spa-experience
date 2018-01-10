@@ -1,18 +1,18 @@
 <template>
+<transition name="mei-modal-fade">
     <div v-show="show" class="mei-modal" tabindex="-1" role="dialog" aria-labelledby="bombConfirmLabel" aria-hidden="false">
         <div class="mei-modal-mask"></div>
         <div class="mei-modal-wrap">
             <div class="mei-modal-content">
+                <i class="mei-icon-close" @click="onClosed">2222</i>
                 <div class="mei-modal-header">
-                    <div class="mei-btn-close">
-                        <i class="mei-icon-close" @click="button[1].ontap">2222</i>
-                    </div>
-                    <h4 class="mei-modal-title">{{title}}</h4>
+                    <p>{{title}}</p>
                 </div>
                 <div class="mei-modal-body">
                     <div class="mei-status-icon-box">
                     </div>
-                    <div class="mei-status-text">{{text}}</div>
+                   <p v-if="!dangerouslyUseHTMLString">{{ text }}</p>
+                   <p v-else v-html="text"></p>
                 </div>
                 <div class="mei-modal-footer">
                     <button type="button" class="mei-btn mei-btn-primary" id="confirmButtons1" @click="button[0].ontap">{{button[0].text}}</button>
@@ -21,6 +21,7 @@
             </div>
         </div>
     </div>
+</transition>
 </template>
 
 <script>
@@ -30,24 +31,36 @@
                 show: true,
                 title: '1212',
                 text: '12121111112',
-                button: []
+                button: [],
+                dangerouslyUseHTMLString:false
             }
+        },
+         methods:{
+                onClosed(){
+                    this.close();
+                }
         }
+
     }
 </script>
 
 <style lang="scss" rel="stylesheet">
-    .mei-modal {
-        .mei-model-mask {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(55, 55, 55, .6);
-            height: 100%;
-            z-index: 1000;
-        }
-        
-    }
+  @import "./../../../css/component.scss";
+  .mei-modal-fade-enter,.mei-modal-fade-leave-to{
+       transform: scale(0);
+  }
+  .mei-modal-fade-enter-active{
+       animation: bounce-in 2s;
+  }
+   .mei-modal-fade-leave-active{
+       animation: bounce-in 2s reverse;
+  }
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 </style>

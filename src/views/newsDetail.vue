@@ -20,7 +20,7 @@
                 method: "GET",
                 url: url
             }).then(function (res) {
-                  var normalizeCode = function(code){
+                var normalizeCode = function(code){
                     code = code.replace(/&lt;/g,'<');
                     code = code.replace(/&gt;/g,'>');
                     code = code.replace(/&amp;/g,'&');
