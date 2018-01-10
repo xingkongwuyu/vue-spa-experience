@@ -7,13 +7,13 @@ import VueRouter from 'vue-router';
 import App from './app';
 import routes from './routes';
 import Axios from './utils/diyaxios';
-import './css/component.css'
 import './css/normalize.css';
 import 'lib-flexible/flexible.js'
 import FastClick from 'fastclick'
 import vueNotice from './components/notice'
 import vueLoading from './components/loading/index.js';
 import VueConfirm from './components/confirm/index.js'
+import VueMessage from './components/message/index.js'
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
         FastClick.attach(document.body);
@@ -25,6 +25,7 @@ Vue.use(VueRouter)
 Vue.use(vueNotice)
 Vue.use(VueConfirm)
 Vue.use(vueLoading)
+Vue.use(VueMessage)
 if(process.env.NODE_ENV=="production"){
 
 }else{

@@ -4,6 +4,7 @@
     <div @click="handleFormatError2">11111</div>
     <div @click="handleFormatError3">11111</div>
     <div @click="handleFormatError4">312121</div>
+    <div @click="handleFormatError5">3122112121</div>
   </div>
 </template>
 
@@ -57,6 +58,13 @@
                 }
             }]
     
+        });
+     },
+      handleFormatError5 () {
+         this.$message({
+          show:true,
+          type:'error',
+          text:11111,
         });
      },
     }
