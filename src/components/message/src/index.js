@@ -3,18 +3,19 @@ import messageVue from './message.vue';
 const defaults = {
     show:false,
     text:'',
-    duration:'5000',
+    duration:'3000',
     type:''
 };
-let messageVueInstances;
 const messageVueConstructor = Vue.extend(messageVue);
 messageVueConstructor.prototype.close = function() {
-    var vm=this;
-    messageVueInstances=null;
+  var vm=this;
+  this.$on('after-leave', _ => {
+   
     if (vm.$el && vm.$el.parentNode) {
-        vm.$el.parentNode.removeChild(vm.$el);
+      vm.$el.parentNode.removeChild(vm.$el);
     }
-    vm.$destroy();
+    this.$destroy();
+  });
     vm.show = false;
 
 };
@@ -24,9 +25,6 @@ const messageBox = (options = {}) => {
     options = Object.assign({}, defaults, options);
     console.log(options)
     let parent = document.body ;
-    if(messageVueInstances){
-      return messageVueInstances
-    }
     let instance = new messageVueConstructor({
       el: document.createElement('div'),
       data: options
@@ -39,7 +37,6 @@ const messageBox = (options = {}) => {
         instance.close();
       },options.duration)
     });
-    messageVueInstances=instance
 
    
     return instance;

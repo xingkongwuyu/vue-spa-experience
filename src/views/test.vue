@@ -1,7 +1,6 @@
 <template>
 <div>
     <div @click="handleFormatError">11111</div>
-    <div @click="handleFormatError2">11111</div>
     <div @click="handleFormatError3">11111</div>
     <div @click="handleFormatError4">312121</div>
     <div @click="handleFormatError5">3122112121</div>
@@ -20,11 +19,7 @@
       handleFormatError () {
         this.notice=this.$Notice({aaa:'122122',one:true});
      },
-      handleFormatError2 () {
-        this.$Notice({aaa:'12121212121',one:false});
-     },
      handleFormatError3 () {
-      
        const loading = this.$loading({
           lock: true,
           text: 'Loading',
@@ -62,7 +57,6 @@
      },
       handleFormatError5 () {
          this.$message({
-          show:true,
           type:'error',
           text:11111,
         });
