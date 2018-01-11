@@ -10,7 +10,6 @@ const messageVueConstructor = Vue.extend(messageVue);
 messageVueConstructor.prototype.close = function() {
   var vm=this;
   this.$on('after-leave', _ => {
-   
     if (vm.$el && vm.$el.parentNode) {
       vm.$el.parentNode.removeChild(vm.$el);
     }
@@ -21,15 +20,12 @@ messageVueConstructor.prototype.close = function() {
 };
 const messageBox = (options = {}) => {
     if (Vue.prototype.$isServer) return;
-    console.log(options);
     options = Object.assign({}, defaults, options);
-    console.log(options)
     let parent = document.body ;
     let instance = new messageVueConstructor({
       el: document.createElement('div'),
       data: options
     });
-  
     parent.appendChild(instance.$el);
     Vue.nextTick(() => {
       instance.show = true;
