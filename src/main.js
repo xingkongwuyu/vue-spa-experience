@@ -19,18 +19,17 @@ if ('addEventListener' in document) {
         FastClick.attach(document.body);
     }, false);
 }
+
 Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(vueNotice)
 Vue.use(VueConfirm)
 Vue.use(vueLoading)
 Vue.use(VueMessage)
-
-//端口配置   本地环境和测试机环境的接口配置
 if(process.env.NODE_ENV=="production"){
-  Axios.defaults.baseURL="http://10.64.83.134/twjyh/index.php?s="
+
 }else{
-  
+
 }
 
 Vue.prototype.$http = Axios;
