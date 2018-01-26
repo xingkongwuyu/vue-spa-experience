@@ -20,7 +20,6 @@ confirmVueConstructor.prototype.close = function() {
             vm.$destroy();
             vm.show = false;
     })
-
     return promise
 };
 const confirmBox = (options = {}) => {

@@ -2,7 +2,7 @@
 <div>
     <div @click="handleFormatError">11111</div>
     <div @click="handleFormatError3">11111</div>
-    <div @click="handleFormatError4">312121</div>
+    <div @click="handleFormatError4">弹出确认框</div>
     <div @click="handleFormatError5">3122112121</div>
   </div>
 </template>
@@ -28,10 +28,10 @@
           fullscreen: true,
         });
      },
-       handleFormatError4 () {
+       confirm () {
           var content = ` <div class="title">11111</div>`
           var vm=this
-         const loading = this.$confirm({
+         const confirm = this.$confirm({
           show:false,
           title:'23232',
           text:content,
@@ -39,16 +39,16 @@
           button:[{
                 text: '确定',
                 ontap: function () {
-                    loading.close().then(function(res){
+                    confirm.close().then(function(res){
                      console.log(111233233231)
                    });
                 }},
                 {
                 text: '取消',
                 ontap: function () {
-                  console.log(loading.close())
-                   loading.close().then(function(res){
-                     console.log(1111111)
+                  
+                   confirm.close().then(function(res){
+                       console.log('close')
                    });
                 }
             }]
@@ -57,7 +57,7 @@
      },
       handleFormatError5 () {
          this.$message({
-          type:'error',
+          type:'success',
           text:11111,
         });
      },
