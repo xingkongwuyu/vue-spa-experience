@@ -51,6 +51,7 @@
     }
 
     .swrapper2 {
+        height: 100%;
         margin-top: 1.30666667rem;
     }
 </style>

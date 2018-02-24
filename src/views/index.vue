@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="index-swrapper">
     <div class="swrapper">
     <router-view></router-view>
     </div>
@@ -12,6 +12,10 @@
 </div>
 </template>
 <style lang="scss" rel="stylesheet/scss">
+.index-swrapper{
+    width:100%;
+    height:100%;
+}
 .swrapper{
     padding-bottom:1.30666667rem;
 

@@ -1,21 +1,19 @@
 <template>
-    <div>
-        <div class="course">
-            <ul>
-                <li v-for="(item,index) in courseList">
-                    <div class="course-img">
-                        <img :src="item.img" />
-                    </div>
-                    <div class="course-title">{{item.title}}</div>
-                    <div class="course-intro">讲师：
-                        <span>{{item.teacher}}</span>
-                    </div>
-                    <div class="course-teacher">简介：
-                        <span>{{item.intro}}</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
+    <div class="course">
+        <ul>
+            <li v-for="(item,index) in courseList">
+                <div class="course-img">
+                    <img :src="item.img" />
+                </div>
+                <div class="course-title">{{item.title}}</div>
+                <div class="course-intro">讲师：
+                    <span>{{item.teacher}}</span>
+                </div>
+                <div class="course-teacher">简介：
+                    <span>{{item.intro}}</span>
+                </div>
+            </li>
+        </ul>
     </div>
 </template>
 <script>
@@ -41,9 +39,8 @@
 <style lang="scss" rel="stylesheet">
     .course {
         width:10rem;
-        padding: .46875rem;
+        padding:0 0.46875rem;
         box-sizing: border-box;
-        margin:0 auto;
         li{
         padding-bottom: .5rem;
         .course-img {

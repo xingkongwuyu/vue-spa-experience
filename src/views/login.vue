@@ -79,9 +79,8 @@
 						password: vm.password,
                      }
                 }).then(function(res){
-					console.log(res)
 					if(res.data.success){
-						window.localStorage.setItem('userInfo',JSON.stringify(res));
+						window.localStorage.setItem('userInfo',JSON.stringify(res.data));
 						vm.$router.push({path: '/index/main/course'});
 					}else{
 						vm.message = res.data.message;
