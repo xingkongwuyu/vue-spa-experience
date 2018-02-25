@@ -1,5 +1,11 @@
 <template>
     <div>
+        <header>
+            <div class="header">
+                 <a class="back" @click="goBack()" >返回</a>
+                 <div>标题111111</div>
+            </div>
+        </header>
         <div class="new-detail" v-html="content" >
         </div>
     </div>
@@ -11,6 +17,11 @@
                 newsDetail: '',
                 content:''
             }
+        },
+        methods:{
+           goBack(){
+               this.$router.go(-1)
+           } 
         },
         mounted() {
             console.log(this.$route.params.id)

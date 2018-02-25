@@ -49,7 +49,7 @@
                })
           },
           goDetail(id){
-              this.$router.push({path:'/index/main/newsDetail/'+id})
+              this.$router.push({path:'/newsDetail/'+id})
           }
       },
       mounted(){

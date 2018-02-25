@@ -40,6 +40,7 @@
     .course {
         width:10rem;
         padding:0 0.46875rem;
+        margin:0 auto;
         box-sizing: border-box;
         li{
         padding-bottom: .5rem;

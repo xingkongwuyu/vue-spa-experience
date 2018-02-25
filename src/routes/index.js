@@ -59,11 +59,6 @@ const routes = [
             name:'newsList',
           },
           {
-            path: 'newsDetail/:id',
-            component:NewsDetail,
-            name:'newsDetail',
-          },
-          {
             path: 'course',
             component:Course,
             name:'course',
@@ -72,7 +67,12 @@ const routes = [
       },
       {path: 'me', component: Me, name: 'me'}
     ]
-  }
+  },
+  {
+    path: '/newsDetail/:id',
+    component:NewsDetail,
+    name:'newsDetail',
+  },
 ].map(route => {
   route.path = rootPath + route.path;
   return route;

@@ -24,14 +24,14 @@
 </script>
 <style lang="scss" rel="stylesheet/scss">
     header {
-        width: 100%;
-        height: 1.30666667rem;
-        line-height: 1.30666667rem;
         position: fixed;
         top: 0;
-        box-shadow: 0 0 10px 1px rgba(7, 17, 27, .1);
+        width: 100%;
+        height: 1.30666667rem;
         z-index: 99997;
         box-sizing: border-box;
+        line-height: 1.30666667rem;
+        box-shadow: 0 0 10px 1px rgba(7, 17, 27, .1);
         background-color: #fff;
     }
 
@@ -40,13 +40,17 @@
         color: #93999f;
         text-align: center;
         li {
-            width: 50%;
             float: left;
-            color: inherit;
+            width: 50%;
             box-sizing: border-box;
+            color: inherit;
         }
         .active {
             color: #fc6722
+        }
+        .back{
+           float:left;
+           margin-left:.3125rem;
         }
     }
 
