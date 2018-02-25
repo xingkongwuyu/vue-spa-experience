@@ -1,0 +1,82 @@
+.mei-modal .mei-modal-mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(55, 55, 55, 0.6);
+  height: 100%;
+  z-index: 1000; }
+.mei-modal .mei-modal-wrap {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+  outline: 0; }
+  .mei-modal .mei-modal-wrap .mei-modal-content {
+    margin: 0 auto;
+    position: relative;
+    width: 520px;
+    outline: 0;
+    top: 100px;
+    background-color: #fff; }
+.mei-modal .mei-icon-close {
+  font-size: 12px;
+  position: absolute;
+  right: 16px;
+  top: 8px;
+  overflow: hidden;
+  cursor: pointer; }
+.mei-modal .mei-modal-header {
+  border-bottom: 1px solid #e9eaec;
+  padding: 14px 16px;
+  line-height: 1; }
+  .mei-modal .mei-modal-header p {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #1c2438;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+.mei-modal .mei-modal-body {
+  padding: 16px;
+  font-size: 12px;
+  line-height: 1.5; }
+.mei-modal .mei-modal-footer {
+  border-top: 1px solid #e9eaec;
+  padding: 12px 18px;
+  text-align: right; }
+.mei-modal .mei-btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  line-height: 1.5;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 6px 15px;
+  font-size: 12px;
+  border-radius: 4px;
+  transition: color .2s linear,background-color .2s linear,border .2s linear;
+  color: #495060;
+  background-color: #f7f7f7;
+  border-color: #dddee1; }
+
+/*# sourceMappingURL=component.css.map */

@@ -3,28 +3,27 @@
 
 import Vue from 'vue';
 import Vuex from 'vuex';
+import store from './store';
 import VueRouter from 'vue-router';
 import App from './app';
 import routes from './routes';
 import Axios from './utils/diyaxios';
 import './css/normalize.css';
-import 'lib-flexible/flexible.js'
-import FastClick from 'fastclick'
-import vueNotice from './components/notice'
-import vueLoading from './components/loading/index.js';
-import VueConfirm from './components/confirm/index.js'
-import VueMessage from './components/message/index.js'
+import 'lib-flexible/flexible.js';
+import FastClick from 'fastclick';
+import vueNotice from './components/notice';
+import VueConfirm from './components/confirm/index.js';
+import VueMessage from './components/message/index.js';
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
         FastClick.attach(document.body);
     }, false);
 }
-Vue.use(Vuex)
-Vue.use(VueRouter)
-Vue.use(vueNotice)
-Vue.use(VueConfirm)
-Vue.use(vueLoading)
-Vue.use(VueMessage)
+Vue.use(Vuex);
+Vue.use(VueRouter);
+Vue.use(vueNotice);
+Vue.use(VueConfirm);
+Vue.use(VueMessage);
 
 //端口配置   本地环境和测试机环境的接口配置
 if(process.env.NODE_ENV=="production"){
@@ -36,6 +35,7 @@ if(process.env.NODE_ENV=="production"){
 Vue.prototype.$http = Axios;
 // 创建一个路由对象用于管理页面的路由
 const router = new VueRouter({
+  store,
   routes,
   mode: 'history',
 });
@@ -68,6 +68,7 @@ router.beforeEach((to, from, next) => {
 
 const app= new Vue({
   el: '#app',
+  store,
   router,
   render: h => h(App)
 });

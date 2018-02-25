@@ -24,7 +24,8 @@
 	</div>
 </template>
 <script>
-    import alert from './../components/Alert'
+	import alert from './../components/Alert'
+	
 	export default {
 		data() {
 			return {
@@ -37,6 +38,9 @@
 				message:''
 			}
 		},
+		created(){
+           this.$store.dispatch('getnews');
+       },
 		components: {alert},
 		methods: {
 			changePW() {
@@ -70,7 +74,6 @@
 					this.alert = true;
 					return
 				}
-			
 				this.$http({
 					method: 'post',
 					url: '/api/hello',
@@ -91,7 +94,8 @@
 			}
 		},
 		mounted(){
-			console.log(this)
+			console.log(this.newsList);
+			
 		}
 	}
 </script>

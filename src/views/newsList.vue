@@ -19,15 +19,21 @@
 </template>
 <script>
  import infinitescroll from './../directives/infiniteScroll.js'
- import loading from './../components/Loading'
+ import loading from './../components/Loading';
+ import {mapGetters} from 'vuex';
   export default{
       data(){
           return {
-              newsList:[],
-              page:{},
-              loading:false,
           }
       },
+     computed:{
+    ...mapGetters({
+      'newsList':'newsList',
+       'page':'page',
+       'loading':'newsloading',
+       'isFirstLoading':'isFirstLoading',
+    }),
+     },
       components: {loading},
       methods:{
           loadMore(){
@@ -35,18 +41,8 @@
                if (this.loading) {
                   return
                }   
-               this.loading=true; 
-              var url='/api/news';
-              console.log(url);
-               vm.$http({
-                   method: "GET",
-                   url: url
-               }).then(function (res) {
-                   vm.loading=false;
-                   vm.newsList = vm.newsList.concat(res.data.data);
-
-                   vm.page = res.data.page;
-               })
+               this.$store.commit('CHANGELOADING',true)
+               this.$store.dispatch('getnews',true)
           },
           goDetail(id){
               this.$router.push({path:'/newsDetail/'+id})
@@ -55,13 +51,10 @@
       mounted(){
           console.log(this.$route.matched)
           var vm=this;
-          vm.$http({
-              method:"GET",
-              url:"/api/news"
-          }).then(function(res){
-              vm.newsList=res.data.data;
-              vm.page=res.data.page;
-          })  
+          if(vm.isFirstLoading==0){
+             this.$store.dispatch('getnews',false);
+          }
+          
       },
       directives: {
         infinitescroll
@@ -77,16 +70,13 @@
       background-color:#F2F7FC;
       li{
           display:-webkit-box;
-          border-bottom:1px solid #ccc;
+          border-bottom:1px solid #eee;
           width:9rem;
           margin:0 auto;
+          cursor:pointer;
           .detail-con{
             -webkit-box-flex: 1;
-            display:-webkit-box;
-            -webkit-box-orient: vertical;
             padding:.46875rem;
-            min-height:3rem;
-            -webkit-box-pack: justify;
             .detail{
                 padding-top:.15625rem;
             }
@@ -102,8 +92,11 @@
             border-radius: 1px;
             background-size:1rem 1rem;
             img{
-                width:100%;
+                height:100%;
             }
+          }
+          &:hover{
+              background-color:#f5f5f5;
           }
       }
   }
